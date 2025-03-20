@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - The Nexus Institute</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background: #121212;
+            color: white;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: #1a1a1a;
+            height: 100vh;
+            padding-top: 20px;
+            position: fixed;
+            transition: 0.3s;
+            left: -250px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 15px;
+        }
+
+        .sidebar ul li a {
+            color: #ddd;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .sidebar ul li a:hover {
+            color: cyan;
+        }
+
+        .toggle-btn {
+            position: absolute;
+            right: -40px;
+            top: 20px;
+            background: cyan;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            color: #121212;
+        }
+
+        .content {
+            margin-left: 50px;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .hero {
+            padding: 100px 20px;
+            background: linear-gradient(45deg, #1f1f1f, #292929);
+            border-radius: 10px;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+        }
+
+        .hero span {
+            color: cyan;
+        }
+
+        .dashboard-section {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .dashboard-section h2 {
+            color: cyan;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar" id="sidebar">
+        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="student-dashboard.html">Dashboard</a></li>
+            <li><a href="student-login.html">Logout</a></li>
+            <li><a href="about.html">About us</a></li>
+        </ul>
+    </div>
+
+    <main class="content">
+        <header class="hero">
+            <h1>Welcome, <span>Student</span></h1>
+            <p></p>
+        </header>
+
+        <section class="dashboard-section">
+            <h2>📚 Your Courses</h2>
+            <p>- Computer Science 101</p>
+            <p>- AI & Robotics</p>
+            <p>- Cybersecurity Basics</p>
+
+            <h2>📊 Grades</h2>
+            <p>GPA: 3.8</p>
+
+            <h2>📢 Announcements</h2>
+            <p>New internship opportunities available!</p>
+        </section>
+    </main>
+
+    <script>
+        function toggleSidebar() {
+            let sidebar = document.getElementById("sidebar");
+            sidebar.style.left = (sidebar.style.left === "-250px") ? "0" : "-250px";
+        }
+    </script>
+
+</body>
+</html>

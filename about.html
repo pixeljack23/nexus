@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - The Nexus Institute</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background: #121212;
+            color: white;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: #1a1a1a;
+            height: 100vh;
+            padding-top: 20px;
+            position: fixed;
+            transition: 0.3s;
+            left: -250px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 15px;
+        }
+
+        .sidebar ul li a {
+            color: #ddd;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .sidebar ul li a:hover {
+            color: cyan;
+        }
+
+        .toggle-btn {
+            position: absolute;
+            right: -40px;
+            top: 20px;
+            background: cyan;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            color: #121212;
+        }
+
+        .content {
+            margin-left: 50px;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .hero {
+            padding: 100px 20px;
+            background: linear-gradient(45deg, #1f1f1f, #292929);
+            border-radius: 10px;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+        }
+
+        .hero span {
+            color: cyan;
+        }
+
+        .timeline-container {
+            max-width: 800px;
+            margin: 30px auto;
+            text-align: left;
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .timeline-item h3 {
+            color: cyan;
+        }
+
+        .timeline-item img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .timeline-item p {
+            display: none;
+            background: #292929;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .timeline-item:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar" id="sidebar">
+        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="innovation.html">Innovation</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <main class="content">
+        <header class="hero">
+            <h1><span>About The Nexus Institute</span></h1>
+            <p>Shaping the Future of Technology & Innovation</p>
+        </header>
+
+        <div class="timeline-container">
+            <h2>Our History</h2>
+            <div class="timeline">
+                <div class="timeline-item" onclick="toggleEvent(1)">
+                    <h3>🚀 1995 - The Founding</h3>
+                    <img id="image-1" src="https://source.unsplash.com/600x400/?university,education" alt="University Founding">
+                    <p id="event-1">The Nexus Institute was founded with a mission to advance technological education and innovation.</p>
+                </div>
+                <div class="timeline-item" onclick="toggleEvent(2)">
+                    <h3>📡 2005 - First Research Breakthrough</h3>
+                    <img id="image-2" src="https://source.unsplash.com/600x400/?ai,robotics" alt="AI Research">
+                    <p id="event-2">Our AI research lab made significant advancements in machine learning and automation.</p>
+                </div>
+                <div class="timeline-item" onclick="toggleEvent(3)">
+                    <h3>🏛️ 2015 - Expansion & Global Recognition</h3>
+                    <img id="image-3" src="https://source.unsplash.com/600x400/?campus,students" alt="University Expansion">
+                    <p id="event-3">The institute expanded internationally and gained recognition as a top university in tech innovation.</p>
+                </div>
+                <div class="timeline-item" onclick="toggleEvent(4)">
+                    <h3>🌍 2025 - The Future of Tech</h3>
+                    <img id="image-4" src="https://source.unsplash.com/600x400/?future,technology" alt="Future of Tech">
+                    <p id="event-4">We continue to push boundaries in AI, robotics, and sustainable technology.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function toggleSidebar() {
+            let sidebar = document.getElementById("sidebar");
+            sidebar.style.left = (sidebar.style.left === "-250px") ? "0" : "-250px";
+        }
+
+        function toggleEvent(eventId) {
+            let eventDetails = document.getElementById(`event-${eventId}`);
+            let eventImage = document.getElementById(`image-${eventId}`);
+
+            if (eventDetails.style.display === "block") {
+                eventDetails.style.display = "none";
+                eventImage.style.display = "none";
+            } else {
+                eventDetails.style.display = "block";
+                eventImage.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
